@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodeMirror 6 Starter</title>
+
+  <style>
+    .cm-editor .cm-scroller {
+      height: 140px;
+    }
+  </style>
+
+  <script defer type="module">
+    // SEE: https://codemirror.net/6/docs/guide/
+    // SEE: https://codemirror.net/6/examples/collab/
+    // SEE: https://www.skypack.dev/
+
+    import {
+      basicSetup,
+    } from 'https://cdn.skypack.dev/@codemirror/basic-setup@0.18.2'
+
+    import {
+      javascript,
+    } from 'https://cdn.skypack.dev/@codemirror/lang-javascript@0.18.0'
+
+    import {
+      EditorState,
+    } from 'https://cdn.skypack.dev/@codemirror/state@0.18.7'
+
+    import {
+      EditorView,
+    } from 'https://cdn.skypack.dev/@codemirror/view@0.18.17'
+
+    const state = EditorState.create({
+      doc: "console.log('Hello, world')",
+      extensions: [basicSetup, javascript()],
+    })
+
+    new EditorView({ state, parent: document.body })
+  </script>
+</head>
+
+<body></body>
+
+</html>
